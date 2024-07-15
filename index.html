@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Tasks</title>
+    
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <br>
+    <pre>Code:
+
+        JavaScript
+        var x = 9;
+        if (true) {
+          var x = 6;
+          console.log(x); // Output: 6
+        }
+        console.log("here: ", x); // Output: undefined
+        Use code with caution.
+        content_copy
+        Explanation:
+        
+        Variable Declaration:
+        
+        var x = 9; declares a variable named x with the initial value 9. Due to using var, the scope of this variable is the entire script (global scope).
+        if Statement:
+        
+        if (true): Since true is always true, the code block within the if statement will always execute.
+        Inside the if block:
+        var x = 6;: This line again declares a variable named x and assigns it the value 6. However, because var has function scope (or global scope if outside a function), this declaration shadows the previously declared x within the scope of the if block. So, within the if block, x refers to the value 6.
+        console.log(x); // Output: 6: This line prints the value of x inside the if block, which is 6 due to the shadowing effect.
+        Second console.log:
+        
+        console.log("here: ", x); // Output: undefined: This line attempts to print the value of x outside the if block. However, the original x declared with 9 is no longer accessible here because it was shadowed by the var x = 6; inside the if block.
+        Since there's no other declaration of x outside the if block, and var variables are not automatically initialized to undefined, the value of x remains undefined when accessed here. This results in the output "undefined" being printed.
+        Key Points:
+        
+        Shadowing: var can lead to shadowing of variables with the same name within nested scopes, potentially causing confusion.
+        Scope: var has function scope or global scope, depending on where it's declared.
+        Best Practices: In modern JavaScript, it's recommended to use let or const for variable declarations to avoid shadowing and promote better code organization.
+        Corrected Code Using let:
+        
+        JavaScript
+        let x = 9; // `let` has block scope
+        if (true) {
+          let x = 6; // This declaration is local to the if block
+          console.log(x); // Output: 6
+        }
+        console.log("here: ", x); // Output: 9 (original value)
+        Use code with caution.
+        content_copy
+        In this corrected code using let, the x declared inside the if block is local to that block, preventing shadowing and preserving the original value 9 for the outer console.log.</pre>
+    <script src="t9.js"></script>
+</body>
+</html>
